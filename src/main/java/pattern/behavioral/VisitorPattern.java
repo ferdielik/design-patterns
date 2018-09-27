@@ -5,11 +5,6 @@ import java.util.List;
 
 public class VisitorPattern
 {
-    public static void main(String[] args)
-    {
-        new VisitorPattern();
-    }
-
     VisitorPattern()
     {
         Basket basket = new Basket();
@@ -22,12 +17,25 @@ public class VisitorPattern
         System.out.println("amount: " + basket.getAmount());
     }
 
+    public static void main(String[] args)
+    {
+        new VisitorPattern();
+    }
+
     /**
      * Visitable element interface
      */
     interface Visitable
     {
         void accept(Visitor visitor);
+    }
+
+    interface Visitor
+    {
+        void visit(Computer book);
+
+        void visit(Phone book);
+
     }
 
     /**
@@ -87,14 +95,6 @@ public class VisitorPattern
         {
             return extras;
         }
-    }
-
-    interface Visitor
-    {
-        void visit(Computer book);
-
-        void visit(Phone book);
-
     }
 
     class AmountVisitor implements Visitor

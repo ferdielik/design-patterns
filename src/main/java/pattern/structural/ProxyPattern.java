@@ -9,11 +9,6 @@ import java.util.concurrent.TimeUnit;
 
 public class ProxyPattern
 {
-    public static void main(String[] args) throws InterruptedException
-    {
-        new ProxyPattern();
-    }
-
     ProxyPattern() throws InterruptedException
     {
         Data data = new ProxyData("/data.csv");
@@ -24,6 +19,11 @@ public class ProxyPattern
 
         // data will not be parse
         show(data);
+    }
+
+    public static void main(String[] args) throws InterruptedException
+    {
+        new ProxyPattern();
     }
 
     private void show(Data data) throws InterruptedException
@@ -37,7 +37,7 @@ public class ProxyPattern
 
     public interface Data
     {
-        public void getProcessedData() throws InterruptedException;
+        void getProcessedData() throws InterruptedException;
     }
 
     public class RealData implements Data

@@ -1,54 +1,66 @@
 package pattern.creational.builder;
 
-class Car {
+class Car
+{
     private String brand;
     private String type;
     private String engineCapacity;
     private String acceleration;
     private String fuelCapacity;
 
-    public String getBrand() {
+    public String getBrand()
+    {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(String brand)
+    {
         this.brand = brand;
     }
 
-    public String getType() {
+    public String getType()
+    {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(String type)
+    {
         this.type = type;
     }
 
-    public String getEngineCapacity() {
+    public String getEngineCapacity()
+    {
         return engineCapacity;
     }
 
-    public void setEngineCapacity(String engineCapacity) {
+    public void setEngineCapacity(String engineCapacity)
+    {
         this.engineCapacity = engineCapacity;
     }
 
-    public String getAcceleration() {
+    public String getAcceleration()
+    {
         return acceleration;
     }
 
-    public void setAcceleration(String acceleration) {
+    public void setAcceleration(String acceleration)
+    {
         this.acceleration = acceleration;
     }
 
-    public String getFuelCapacity() {
+    public String getFuelCapacity()
+    {
         return fuelCapacity;
     }
 
-    public void setFuelCapacity(String fuelCapacity) {
+    public void setFuelCapacity(String fuelCapacity)
+    {
         this.fuelCapacity = fuelCapacity;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Car{" +
                 "brand='" + brand + '\'' +
                 ", type='" + type + '\'' +

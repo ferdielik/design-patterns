@@ -5,11 +5,6 @@ import java.util.List;
 
 public class ObserverPattern
 {
-    public static void main(String[] args)
-    {
-        new ObserverPattern();
-    }
-
     ObserverPattern()
     {
         Cargo cargo = new Cargo();
@@ -21,6 +16,30 @@ public class ObserverPattern
         cargo.setState(CargoState.CARGOED);
         cargo.setState(CargoState.ON_THE_ROAD);
         cargo.setState(CargoState.DELIVERED);
+    }
+
+    public static void main(String[] args)
+    {
+        new ObserverPattern();
+    }
+
+    enum CargoState
+    {
+        CARGOED("Cargoed"),
+        ON_THE_ROAD("Cargo on the road"),
+        DELIVERED("Cargo delivered");
+
+        String message;
+
+        CargoState(String message)
+        {
+            this.message = message;
+        }
+
+        public String getMessage()
+        {
+            return message;
+        }
     }
 
     class Cargo
@@ -47,25 +66,6 @@ public class ObserverPattern
         private void notifyObservers()
         {
             observers.forEach(observer -> observer.update());
-        }
-    }
-
-    enum CargoState
-    {
-        CARGOED("Cargoed"),
-        ON_THE_ROAD("Cargo on the road"),
-        DELIVERED("Cargo delivered");
-
-        String message;
-
-        CargoState(String message)
-        {
-            this.message = message;
-        }
-
-        public String getMessage()
-        {
-            return message;
         }
     }
 

@@ -2,17 +2,22 @@ package pattern.behavioral;
 
 public class StatePattern
 {
-    public static void main(String[] args)
-    {
-        new StatePattern();
-    }
-
     StatePattern()
     {
         Power playerContext = new Power(new Off()); // power off
         playerContext.press(); // power on
         playerContext.press(); // power off
         playerContext.press();
+    }
+
+    public static void main(String[] args)
+    {
+        new StatePattern();
+    }
+
+    private interface State
+    {
+        void press(Power context);
     }
 
     public class Power
@@ -29,20 +34,15 @@ public class StatePattern
             state.press(this);
         }
 
-        public void setState(State state)
-        {
-            this.state = state;
-        }
-
         public State getState()
         {
             return state;
         }
-    }
 
-    private interface State
-    {
-        public void press(Power context);
+        public void setState(State state)
+        {
+            this.state = state;
+        }
     }
 
     public class On implements State

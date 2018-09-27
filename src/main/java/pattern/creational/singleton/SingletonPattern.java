@@ -3,8 +3,10 @@ package pattern.creational.singleton;
 /**
  * Created by stuff on 3/4/2017.
  */
-public class SingletonPattern {
-    SingletonPattern() {
+public class SingletonPattern
+{
+    SingletonPattern()
+    {
         System.out.println("Simple singleton pattern");
         Calculator calculator = Calculator.getInstance();
         calculator.printHashCode();
@@ -27,7 +29,8 @@ public class SingletonPattern {
         threadSafeCalculator.printHashCode();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         new SingletonPattern();
     }
 }
